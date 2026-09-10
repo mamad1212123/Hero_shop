@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html class="dark" dir="rtl" lang="fa">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+  <title>درباره ما و قوانین سرور | Hero Shop</title>
+  <meta name="description" content="آشنایی با سرور ماینکرفت هیرو شاپ، مشخصات فنی سرور، تیم مدیریت و ادمین‌ها، و قوانین رسمی خرید رنک." />
+  <meta property="og:title" content="درباره ما و قوانین سرور | Hero Shop" />
+  <meta property="og:description" content="آشنایی با سرور ماینکرفت هیرو شاپ و قوانین خرید رنک" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "error": "#ffb4ab",
+            "on-tertiary": "#003824",
+            "on-surface-variant": "#baccb0",
+            "surface-variant": "#323633",
+            "on-surface": "#e1e3df",
+            "primary-container": "#39ff14",
+            "surface-dim": "#111412",
+            "primary": "#efffe3",
+            "secondary": "#b2cdb6",
+            "primary-fixed-dim": "#2ae500",
+            "tertiary-fixed": "#6ffbbe",
+            "surface-container-low": "#191c1a",
+            "surface": "#111412",
+            "on-background": "#e1e3df",
+            "surface-container-high": "#272b28",
+            "on-primary-fixed": "#022100",
+            "surface-container-lowest": "#0c0f0d",
+            "secondary-container": "#344c3a",
+            "primary-fixed": "#79ff5b",
+            "surface-container": "#1d201e",
+            "outline-variant": "#3c4b35"
+          },
+          fontFamily: {
+            "display": ["'Space Grotesk'", "'Vazirmatn'", "sans-serif"],
+            "body": ["'Vazirmatn'", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="./assets/css/style.css"/>
+</head>
+<body class="bg-surface text-on-surface flex flex-col min-h-screen">
+
+  <!-- HEADER -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/85 backdrop-blur-xl pt-safe shadow-[0_4px_24px_rgba(0,0,0,0.6)] border-b border-surface-container-high/40">
+    <div class="max-w-6xl mx-auto h-16 px-4 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img alt="Hero Shop Logo" class="h-8 w-auto object-contain group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida/AEtjO1UePhRO6-jeTP817IB_zfKAYpYXuTztU42j6xGWYhluX5U7i6jLUwoAN0-wl-LI7ybq0BHVxAQ0FUwiz_UzMscXlcyud-HmK__tsTrGB1JU7KbrB1Nk6VU09B_gNqFgsQJ2zDjovgdxcfjiaMtFE7syfk-MYwp5dgiL5mukQ2rq3Jp6qEMGkVV6_1rz4smJkQg8CVfTH8ri_J4oZ7LEx8kk5cGLEMQUElW1WNcVoIUtBrhaSysjHRVRymaP"/>
+        <div class="flex flex-col">
+          <span class="font-bold text-lg text-on-surface tracking-tight leading-none">Hero Shop</span>
+          <span class="text-[10px] text-primary-container font-bold leading-none uppercase mt-0.5">درباره ما و سرور</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-on-surface-variant">
+        <a href="index.html" class="hover:text-primary-container transition-colors" data-nav-page="index.html">خانه</a>
+        <a href="products.html" class="hover:text-primary-container transition-colors" data-nav-page="products.html">فروشگاه رنک‌ها</a>
+        <a href="about.html" class="hover:text-primary-container transition-colors text-primary-container font-bold" data-nav-page="about.html">درباره سرور و قوانین</a>
+        <a href="contact.html" class="hover:text-primary-container transition-colors" data-nav-page="contact.html">پشتیبانی و سفارش تلگرام</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="flex items-center gap-2.5">
+        <button onclick="openCart()" class="relative w-10 h-10 flex items-center justify-center rounded-xl bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" title="سبد خرید">
+          <span class="material-symbols-outlined text-[22px]">shopping_bag</span>
+          <span class="cart-badge-count absolute -top-1 -right-1 w-4 h-4 bg-primary-container text-on-primary-fixed text-[10px] rounded-full flex items-center justify-center font-bold">2</span>
+        </button>
+
+        <button onclick="openAccountModal()" class="h-9 px-3.5 bg-primary-container text-on-primary-fixed text-xs font-bold rounded-xl flex items-center gap-1.5 shadow-[0_0_16px_rgba(57,255,20,0.35)] hover:bg-primary-fixed active:scale-95 transition-all">
+          <span id="header-gamertag-label">ورود</span>
+        </button>
+        
+        <button onclick="openAccountModal()" class="w-8 h-8 rounded-full bg-primary flex items-center justify-center overflow-hidden flex-shrink-0" title="پروفایل">
+          <img id="header-user-avatar" src="" alt="Skin" class="w-full h-full object-cover hidden"/>
+          <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN ABOUT CONTENT -->
+  <main class="flex-grow relative w-full pt-20 pb-24 bg-surface">
+    <div class="max-w-4xl mx-auto px-4 flex flex-col w-full text-on-surface select-none pb-12">
+
+      <!-- Breadcrumbs -->
+      <div class="flex items-center gap-2 text-xs text-on-surface-variant mb-4">
+        <a href="index.html" class="hover:text-primary-container">خانه</a>
+        <span>/</span>
+        <span class="text-on-surface">درباره ما و قوانین</span>
+      </div>
+
+      <!-- Hero Header for About -->
+      <section class="text-center py-6 mb-8 bg-surface-container-low/80 rounded-2xl p-6 border border-outline-variant/30 backdrop-blur-md">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high/80 text-xs text-primary-container font-bold mb-3 border border-primary-container/20">
+          <span class="material-symbols-outlined text-[16px]">verified</span>
+          جامعه بازیکنان سرور هیرو شاپ
+        </div>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-on-surface mb-2">
+          درباره ما، سرور و قوانین رسمی
+        </h1>
+        <p class="text-xs sm:text-sm text-on-surface-variant max-w-xl mx-auto leading-relaxed">
+          هدف ما خلق محیطی عادلانه، با پینگ فوق‌العاده و تحویل آنی امکانات ویژه بدون افت کیفیت و قطعی برای تمامی بازیکنان ماینکرفت در ایران است.
+        </p>
+      </section>
+
+      <!-- SERVER STORY & SPECS -->
+      <section class="mb-10 flex flex-col gap-4">
+        <div class="flex items-center gap-2">
+          <div class="w-2.5 h-6 bg-primary-container rounded-sm shadow-[0_0_10px_rgba(57,255,20,0.5)]"></div>
+          <h2 class="text-xl font-bold text-on-surface">
+            زیرساخت فنی و قدرت سرور
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <!-- Spec 1: CPU -->
+          <div class="bg-surface-container-low/90 p-4 rounded-2xl border border-outline-variant/20 flex items-start gap-3.5">
+            <div class="w-11 h-11 rounded-xl bg-surface-container-high flex items-center justify-center text-primary-container flex-shrink-0">
+              <span class="material-symbols-outlined text-[24px]">memory</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-sm font-bold text-on-surface">پردازنده AMD Ryzen 9 7950X</span>
+              <span class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                فرکانس بوست تا 5.7 گیگاهرتز اختصاصی برای پردازش تک‌هسته‌ای تیک‌های ماینکرفت (20 TPS پایدار).
+              </span>
+            </div>
+          </div>
+
+          <!-- Spec 2: RAM & SSD -->
+          <div class="bg-surface-container-low/90 p-4 rounded-2xl border border-outline-variant/20 flex items-start gap-3.5">
+            <div class="w-11 h-11 rounded-xl bg-surface-container-high flex items-center justify-center text-primary-container flex-shrink-0">
+              <span class="material-symbols-outlined text-[24px]">speed</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-sm font-bold text-on-surface">128GB رم DDR5 + حافظه NVMe</span>
+              <span class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                لودینگ فوق‌العاده سریع چانک‌ها و دنیاها بدون کمترین لگ یا تأخیر هنگام جابه‌جایی سریع.
+              </span>
+            </div>
+          </div>
+
+          <!-- Spec 3: Anti-DDoS -->
+          <div class="bg-surface-container-low/90 p-4 rounded-2xl border border-outline-variant/20 flex items-start gap-3.5">
+            <div class="w-11 h-11 rounded-xl bg-surface-container-high flex items-center justify-center text-primary-container flex-shrink-0">
+              <span class="material-symbols-outlined text-[24px]">shield</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-sm font-bold text-on-surface">حفاظت پیشرفته Anti-DDoS گیم</span>
+              <span class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                فیلترینگ لایه‌های ۳، ۴ و ۷ برای دفع تمامی حملات مخرب و جلوگیری از قطعی بازی در بتل‌ها.
+              </span>
+            </div>
+          </div>
+
+          <!-- Spec 4: Low Ping -->
+          <div class="bg-surface-container-low/90 p-4 rounded-2xl border border-outline-variant/20 flex items-start gap-3.5">
+            <div class="w-11 h-11 rounded-xl bg-surface-container-high flex items-center justify-center text-primary-container flex-shrink-0">
+              <span class="material-symbols-outlined text-[24px]">network_ping</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-sm font-bold text-on-surface">پینگ تک‌رقمی در دیتاسنتر داخلی</span>
+              <span class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                مسیرهای بهینه ترافیک و اتصال مستقیم به کلیه اپراتورهای همراه اول، ایرانسل و مخابرات.
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STAFF TEAM SECTION -->
+      <section class="mb-10 flex flex-col gap-4">
+        <div class="flex items-center gap-2">
+          <div class="w-2.5 h-6 bg-primary-container rounded-sm shadow-[0_0_10px_rgba(57,255,20,0.5)]"></div>
+          <h2 class="text-xl font-bold text-on-surface">
+            تیم مدیریت و کادر اداری سرور
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+          <!-- Member 1: Owner -->
+          <div class="bg-surface-container-low/90 p-4 rounded-2xl border border-primary-container/30 flex flex-col items-center text-center shadow-sm">
+            <div class="w-16 h-16 rounded-2xl bg-surface-container-high p-1 mb-3 border border-primary-container/40">
+              <img src="https://minotar.net/avatar/DarkHero/64.png" alt="Owner" class="w-full h-full rounded-xl object-cover"/>
+            </div>
+            <span class="text-sm font-bold text-on-surface">DarkHero</span>
+            <span class="text-[10px] text-primary-container font-bold px-2 py-0.5 rounded-full bg-primary-container/10 border border-primary-container/30 mt-1">مالک و بنیان‌گذار (Owner)</span>
+            <p class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+              طراحی هسته سرور، مدیریت کلی مالی و تعیین مسیر آپدیت‌ها.
+            </p>
+          </div>
+
+          <!-- Member 2: Head Admin -->
+          <div class="bg-surface-container-low/90 p-4 rounded-2xl border border-outline-variant/20 flex flex-col items-center text-center shadow-sm">
+            <div class="w-16 h-16 rounded-2xl bg-surface-container-high p-1 mb-3 border border-amber-400/30">
+              <img src="https://minotar.net/avatar/CyberKnight/64.png" alt="Head Admin" class="w-full h-full rounded-xl object-cover"/>
+            </div>
+            <span class="text-sm font-bold text-on-surface">CyberKnight</span>
+            <span class="text-[10px] text-amber-400 font-bold px-2 py-0.5 rounded-full bg-amber-400/10 border border-amber-400/30 mt-1">سرپرست ادمین‌ها (Head Admin)</span>
+            <p class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+              نظارت بر عملکرد ناظران، اجرای عدالت و رسیدگی به شکایات ویژه.
+            </p>
+          </div>
+
+          <!-- Member 3: Developer -->
+          <div class="bg-surface-container-low/90 p-4 rounded-2xl border border-outline-variant/20 flex flex-col items-center text-center shadow-sm">
+            <div class="w-16 h-16 rounded-2xl bg-surface-container-high p-1 mb-3 border border-cyan-400/30">
+              <img src="https://minotar.net/avatar/RedstoneDev/64.png" alt="Developer" class="w-full h-full rounded-xl object-cover"/>
+            </div>
+            <span class="text-sm font-bold text-on-surface">RedstoneMaster</span>
+            <span class="text-[10px] text-cyan-400 font-bold px-2 py-0.5 rounded-full bg-cyan-400/10 border border-cyan-400/30 mt-1">برنامه‌نویس پلاگین (Dev)</span>
+            <p class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+              توسعه سیستم خودکار Hero-Sys، بهینه‌سازی کدهای گیم‌پلی و ضدتقلب.
+            </p>
+          </div>
+
+          <!-- Member 4: Community -->
+          <div class="bg-surface-container-low/90 p-4 rounded-2xl border border-outline-variant/20 flex flex-col items-center text-center shadow-sm">
+            <div class="w-16 h-16 rounded-2xl bg-surface-container-high p-1 mb-3 border border-purple-400/30">
+              <img src="https://minotar.net/avatar/PixelQueen/64.png" alt="Community" class="w-full h-full rounded-xl object-cover"/>
+            </div>
+            <span class="text-sm font-bold text-on-surface">PixelQueen</span>
+            <span class="text-[10px] text-purple-400 font-bold px-2 py-0.5 rounded-full bg-purple-400/10 border border-purple-400/30 mt-1">مدیر کامیونیتی (Community)</span>
+            <p class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+              برگزاری ایونت‌ها، تورنومنت‌های جایزه‌دار هفتگی و پاسخ به تیکت‌ها.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVER RULES & PURCHASING POLICIES -->
+      <section class="mb-10 flex flex-col gap-4">
+        <div class="flex items-center gap-2">
+          <div class="w-2.5 h-6 bg-primary-container rounded-sm shadow-[0_0_10px_rgba(57,255,20,0.5)]"></div>
+          <h2 class="text-xl font-bold text-on-surface">
+            قوانین و شفافیت خرید رنک در Hero Shop
+          </h2>
+        </div>
+
+        <div class="flex flex-col gap-3 bg-surface-container-low/90 p-4 sm:p-5 rounded-2xl border border-outline-variant/20 text-xs sm:text-sm text-on-surface">
+          <!-- Rule 1 -->
+          <div class="flex items-start gap-3 p-3 rounded-xl bg-surface-container-lowest/60 border border-outline-variant/10">
+            <span class="material-symbols-outlined text-primary-container text-[20px] flex-shrink-0 mt-0.5">balance</span>
+            <div class="flex flex-col">
+              <span class="font-bold text-on-surface">۱. برابری قوانین بازی برای تمامی رنک‌ها</span>
+              <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                خرید رنک و آیتم هیچ‌گونه مصونیتی از رعایت قوانین گیم‌پلی (مانند استفاده از کلاینت تقلب، توهین به بازیکنان، گریف کردن نواحی محافظت‌شده) ایجاد نمی‌کند. در صورت تخلف، حساب طبق ضوابط مجازات خواهد شد.
+              </p>
+            </div>
+          </div>
+
+          <!-- Rule 2 -->
+          <div class="flex items-start gap-3 p-3 rounded-xl bg-surface-container-lowest/60 border border-outline-variant/10">
+            <span class="material-symbols-outlined text-primary-container text-[20px] flex-shrink-0 mt-0.5">change_circle</span>
+            <div class="flex flex-col">
+              <span class="font-bold text-on-surface">۲. شرایط تغییر گیم‌تگ یا انتقال رنک</span>
+              <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                در صورتی که اکانت پرمیوم خود را تغییر داده یا نیاز به انتقال رنک به نام کاربری دیگری داشته باشید، با ارسال درخواست در بخش پشتیبانی تلگرام یا تیکت، انتقال ظرف ۲۴ ساعت بررسی و انجام خواهد شد.
+              </p>
+            </div>
+          </div>
+
+          <!-- Rule 3 -->
+          <div class="flex items-start gap-3 p-3 rounded-xl bg-surface-container-lowest/60 border border-outline-variant/10">
+            <span class="material-symbols-outlined text-primary-container text-[20px] flex-shrink-0 mt-0.5">lock_clock</span>
+            <div class="flex flex-col">
+              <span class="font-bold text-on-surface">۳. تضمین دائمی بودن رنک‌ها (Lifetime)</span>
+              <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                تمامی رنک‌های VIP, MVP, ELITE, LEGEND دائمی بوده و حتی در صورت ریست فصل (Season Reset) مجدداً روی اکانت شما بازیابی خواهند شد.
+              </p>
+            </div>
+          </div>
+
+          <!-- Rule 4 -->
+          <div class="flex items-start gap-3 p-3 rounded-xl bg-surface-container-lowest/60 border border-outline-variant/10">
+            <span class="material-symbols-outlined text-primary-container text-[20px] flex-shrink-0 mt-0.5">support_agent</span>
+            <div class="flex flex-col">
+              <span class="font-bold text-on-surface">۴. پیگیری سفارش و خطاهای احتمالی</span>
+              <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                در موارد نادری که سرور با وقفه مواجه شده باشد، کافی است کد پیگیری تراکنش خود را به تلگرام @HeroShop_Support ارسال نمایید تا به صورت دستی رنک ست گردد.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section class="mb-10 flex flex-col gap-4">
+        <div class="flex items-center gap-2">
+          <div class="w-2.5 h-6 bg-primary-container rounded-sm shadow-[0_0_10px_rgba(57,255,20,0.5)]"></div>
+          <h2 class="text-xl font-bold text-on-surface">
+            نظرات بازیکنان سرور
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+          <div class="bg-surface-container-low/90 p-4 rounded-2xl border border-outline-variant/20 flex flex-col gap-2">
+            <div class="flex items-center gap-2">
+              <img src="https://minotar.net/avatar/Ali_Miner/32.png" alt="Player" class="w-8 h-8 rounded-lg"/>
+              <div class="flex flex-col">
+                <span class="text-xs font-bold text-on-surface">Ali_Miner</span>
+                <span class="text-[10px] text-primary-container font-mono">دارنده رنک LEGEND</span>
+              </div>
+            </div>
+            <p class="text-xs text-on-surface-variant leading-relaxed">
+              "تحویل کمتر از ۳۰ ثانیه انجام شد! دستور /fly نامحدود و کیت ندرایت بازی رو خیلی جذاب‌تر کرد."
+            </p>
+          </div>
+
+          <div class="bg-surface-container-low/90 p-4 rounded-2xl border border-outline-variant/20 flex flex-col gap-2">
+            <div class="flex items-center gap-2">
+              <img src="https://minotar.net/avatar/Reza_PVP/32.png" alt="Player" class="w-8 h-8 rounded-lg"/>
+              <div class="flex flex-col">
+                <span class="text-xs font-bold text-on-surface">Reza_PVP</span>
+                <span class="text-[10px] text-cyan-400 font-mono">دارنده رنک MVP</span>
+              </div>
+            </div>
+            <p class="text-xs text-on-surface-variant leading-relaxed">
+              "پینگ عالی و بدون لگ تو بتل‌ها. پشتیبانی تلگرام هم خیلی سریع پاسخ داد و راهنماییم کرد."
+            </p>
+          </div>
+
+          <div class="bg-surface-container-low/90 p-4 rounded-2xl border border-outline-variant/20 flex flex-col gap-2">
+            <div class="flex items-center gap-2">
+              <img src="https://minotar.net/avatar/Sara_Craft/32.png" alt="Player" class="w-8 h-8 rounded-lg"/>
+              <div class="flex flex-col">
+                <span class="text-xs font-bold text-on-surface">Sara_Craft</span>
+                <span class="text-[10px] text-purple-400 font-mono">دارنده رنک ELITE</span>
+              </div>
+            </div>
+            <p class="text-xs text-on-surface-variant leading-relaxed">
+              "امکانات اندرچست همراه و افکت‌های ذره‌ای واقعاً باکیفیت و قشنگ کار شدن. ممنون از هیرو شاپ."
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="mt-auto w-full bg-surface-container-lowest/90 px-4 py-8 text-center flex flex-col items-center gap-4 border-t border-surface-container-high/40">
+      <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-on-surface-variant">
+        <a class="hover:text-primary-container transition-colors" href="index.html">خانه</a>
+        <a class="hover:text-primary-container transition-colors" href="products.html">فروشگاه رنک‌ها</a>
+        <a class="hover:text-primary-container transition-colors text-primary-container font-bold" href="about.html">قوانین و درباره ما</a>
+        <a class="hover:text-primary-container transition-colors" href="contact.html">پشتیبانی تلگرام</a>
+      </div>
+      <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-surface-container text-xs text-secondary border border-outline-variant/30">
+        <span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+        <span class="text-on-surface-variant">آدرس سرور:</span>
+        <span class="text-on-surface font-mono font-bold" dir="ltr">185.141.105.216:6784</span>
+      </div>
+      <div class="flex flex-col items-center gap-1">
+        <p class="text-xs text-on-surface-variant">Hero Shop - فروشگاه رنک‌های سرور ماینکرفت</p>
+        <p class="text-[11px] text-outline" dir="rtl">© 2026 Hero Shop - تمامی حقوق محفوظ است.</p>
+      </div>
+    </footer>
+  </main>
+
+  <!-- BOTTOM MOBILE NAVIGATION BAR -->
+  <nav class="fixed bottom-0 inset-x-0 z-40 md:hidden pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-8px_24px_rgba(0,0,0,0.7)] border-t border-surface-container-high/40">
+    <div class="flex justify-around items-center h-16 px-2">
+      <a class="flex flex-col items-center justify-center gap-1 w-14 h-14 text-on-surface-variant hover:text-on-surface transition-colors" href="index.html" data-nav-page="index.html">
+        <span class="material-symbols-outlined text-[22px]">cottage</span>
+        <span class="text-[10px]">خانه</span>
+      </a>
+      <a class="flex flex-col items-center justify-center gap-1 w-14 h-14 text-on-surface-variant hover:text-on-surface transition-colors" href="products.html" data-nav-page="products.html">
+        <span class="material-symbols-outlined text-[22px]">military_tech</span>
+        <span class="text-[10px]">رنک‌ها</span>
+      </a>
+      <a class="flex flex-col items-center justify-center gap-1 w-14 h-14 text-on-surface-variant hover:text-on-surface transition-colors relative cursor-pointer" onclick="openCart()">
+        <span class="material-symbols-outlined text-[22px]">shopping_bag</span>
+        <span class="text-[10px]">سبد خرید</span>
+        <span class="cart-badge-count absolute top-1.5 right-3 w-4 h-4 rounded-full bg-primary-container text-on-primary-fixed font-bold text-[9px] flex items-center justify-center">2</span>
+      </a>
+      <a class="flex flex-col items-center justify-center gap-1 w-14 h-14 text-on-surface-variant hover:text-on-surface transition-colors" href="contact.html" data-nav-page="contact.html">
+        <span class="material-symbols-outlined text-[22px]">headset_mic</span>
+        <span class="text-[10px]">پشتیبانی</span>
+      </a>
+      <a class="flex flex-col items-center justify-center gap-1 w-14 h-14 transition-colors text-primary-container font-bold" href="about.html" data-nav-page="about.html">
+        <span class="material-symbols-outlined text-[22px]">info</span>
+        <span class="text-[10px]">درباره ما</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- CART SLIDE-OVER DRAWER -->
+  <div id="cart-drawer-backdrop" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden opacity-0 drawer-backdrop"></div>
+  <aside id="cart-drawer" class="fixed top-0 bottom-0 left-0 z-50 w-full max-w-sm bg-surface-container-low shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col border-r border-outline-variant/30">
+    <div class="h-16 px-4 bg-surface-container-lowest flex items-center justify-between border-b border-surface-container-high/60">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary-container text-[22px]">shopping_cart</span>
+        <span class="font-bold text-sm text-on-surface">سبد خرید شما</span>
+      </div>
+      <button onclick="closeCart()" class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+    </div>
+
+    <div class="flex-grow p-4 overflow-y-auto flex flex-col gap-3">
+      <div class="p-3 rounded-xl bg-surface-container-high/40 border border-outline-variant/30 mb-1">
+        <label class="block text-xs text-on-surface-variant mb-1 font-medium">گیم‌تگ ماینکرفت شما:</label>
+        <div class="flex items-center gap-2">
+          <input id="cart-gamertag-input" type="text" placeholder="مثلاً: Steve_Pro" dir="ltr" class="flex-grow h-9 px-3 rounded-lg bg-surface-container-lowest text-on-surface text-xs font-mono border border-outline-variant/40 focus:border-primary-container focus:outline-none"/>
+          <button onclick="saveAccountGamertag()" class="h-9 px-3 bg-surface-container-highest hover:bg-primary-container hover:text-on-primary-fixed text-xs font-bold rounded-lg transition-colors">ثبت</button>
+        </div>
+      </div>
+
+      <div id="cart-items-list" class="flex flex-col gap-2.5"></div>
+      <div id="cart-empty-message" class="hidden flex-col items-center justify-center py-12 text-center text-on-surface-variant gap-2">
+        <span class="material-symbols-outlined text-[48px] text-outline/50">remove_shopping_cart</span>
+        <span class="text-sm font-bold">سبد خرید شما خالی است</span>
+      </div>
+    </div>
+
+    <div id="cart-drawer-footer" class="p-4 bg-surface-container-lowest border-t border-surface-container-high/60 flex flex-col gap-3">
+      <div class="flex items-center justify-between text-xs">
+        <span class="text-on-surface-variant">مجموع قیمت:</span>
+        <span id="cart-total-price" class="text-sm font-bold text-primary-container font-mono">۰ کوین</span>
+      </div>
+      <button onclick="checkoutWithTelegram()" class="w-full h-11 bg-primary-container hover:bg-primary-fixed text-on-primary-fixed text-xs font-extrabold rounded-xl flex items-center justify-center gap-2 shadow-[0_0_16px_rgba(57,255,20,0.4)] active:scale-95 transition-all">
+        <span class="material-symbols-outlined text-[18px]">send</span>
+        <span>ثبت و تکمیل سفارش در تلگرام</span>
+      </button>
+      <button onclick="CartManager.clearCart()" class="text-center text-[11px] text-outline hover:text-error transition-colors">
+        خالی کردن سبد خرید
+      </button>
+    </div>
+  </aside>
+
+  <!-- GAMERTAG MODAL -->
+  <div id="account-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="w-full max-w-sm rounded-2xl bg-surface-container-low border border-outline-variant/30 shadow-2xl p-5 flex flex-col gap-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary-container text-[22px]">account_circle</span>
+          <span class="font-bold text-sm text-on-surface">حساب بازیکن</span>
+        </div>
+        <button onclick="closeAccountModal()" class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface">
+          <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+      </div>
+      <p class="text-xs text-on-surface-variant leading-relaxed">
+        نام کاربری ماینکرفت خود را وارد نمایید.
+      </p>
+      <div class="flex flex-col gap-1.5">
+        <label class="text-xs text-on-surface-variant font-medium">گیم‌تگ (Username):</label>
+        <input id="account-gamertag-input" type="text" placeholder="Minecraft Username" dir="ltr" class="w-full h-10 px-3 rounded-xl bg-surface-container-lowest text-on-surface text-sm font-mono border border-outline-variant/40 focus:border-primary-container focus:outline-none"/>
+      </div>
+      <button onclick="saveAccountGamertag()" class="w-full h-10 bg-primary-container hover:bg-primary-fixed text-on-primary-fixed text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 transition-all shadow-[0_0_12px_rgba(57,255,20,0.3)]">
+        <span class="material-symbols-outlined text-[18px]">save</span>
+        ذخیره نام کاربری
+      </button>
+    </div>
+  </div>
+
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>

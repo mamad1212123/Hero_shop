@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html class="dark" dir="rtl" lang="fa">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+  <title>پشتیبانی و ثبت سفارش تلگرام | Hero Shop</title>
+  <meta name="description" content="ارتباط مستقیم با تیم پشتیبانی سرور ماینکرفت هیرو شاپ، ثبت سفارش مستقیم از طریق تلگرام و ارسال تیکت." />
+  <meta property="og:title" content="پشتیبانی و ثبت سفارش تلگرام | Hero Shop" />
+  <meta property="og:description" content="ثبت سفارش مستقیم در تلگرام و پیگیری آنی تیکت‌های پشتیبانی" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "error": "#ffb4ab",
+            "on-tertiary": "#003824",
+            "on-surface-variant": "#baccb0",
+            "surface-variant": "#323633",
+            "on-surface": "#e1e3df",
+            "primary-container": "#39ff14",
+            "surface-dim": "#111412",
+            "primary": "#efffe3",
+            "secondary": "#b2cdb6",
+            "primary-fixed-dim": "#2ae500",
+            "tertiary-fixed": "#6ffbbe",
+            "surface-container-low": "#191c1a",
+            "surface": "#111412",
+            "on-background": "#e1e3df",
+            "surface-container-high": "#272b28",
+            "on-primary-fixed": "#022100",
+            "surface-container-lowest": "#0c0f0d",
+            "secondary-container": "#344c3a",
+            "primary-fixed": "#79ff5b",
+            "surface-container": "#1d201e",
+            "outline-variant": "#3c4b35"
+          },
+          fontFamily: {
+            "display": ["'Space Grotesk'", "'Vazirmatn'", "sans-serif"],
+            "body": ["'Vazirmatn'", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="./assets/css/style.css"/>
+</head>
+<body class="bg-surface text-on-surface flex flex-col min-h-screen">
+
+  <!-- HEADER -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/85 backdrop-blur-xl pt-safe shadow-[0_4px_24px_rgba(0,0,0,0.6)] border-b border-surface-container-high/40">
+    <div class="max-w-6xl mx-auto h-16 px-4 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img alt="Hero Shop Logo" class="h-8 w-auto object-contain group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida/AEtjO1UePhRO6-jeTP817IB_zfKAYpYXuTztU42j6xGWYhluX5U7i6jLUwoAN0-wl-LI7ybq0BHVxAQ0FUwiz_UzMscXlcyud-HmK__tsTrGB1JU7KbrB1Nk6VU09B_gNqFgsQJ2zDjovgdxcfjiaMtFE7syfk-MYwp5dgiL5mukQ2rq3Jp6qEMGkVV6_1rz4smJkQg8CVfTH8ri_J4oZ7LEx8kk5cGLEMQUElW1WNcVoIUtBrhaSysjHRVRymaP"/>
+        <div class="flex flex-col">
+          <span class="font-bold text-lg text-on-surface tracking-tight leading-none">Hero Shop</span>
+          <span class="text-[10px] text-primary-container font-bold leading-none uppercase mt-0.5">پشتیبانی و تلگرام</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-on-surface-variant">
+        <a href="index.html" class="hover:text-primary-container transition-colors" data-nav-page="index.html">خانه</a>
+        <a href="products.html" class="hover:text-primary-container transition-colors" data-nav-page="products.html">فروشگاه رنک‌ها</a>
+        <a href="about.html" class="hover:text-primary-container transition-colors" data-nav-page="about.html">درباره سرور و قوانین</a>
+        <a href="contact.html" class="hover:text-primary-container transition-colors text-primary-container font-bold" data-nav-page="contact.html">پشتیبانی و سفارش تلگرام</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="flex items-center gap-2.5">
+        <button onclick="openCart()" class="relative w-10 h-10 flex items-center justify-center rounded-xl bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" title="سبد خرید">
+          <span class="material-symbols-outlined text-[22px]">shopping_bag</span>
+          <span class="cart-badge-count absolute -top-1 -right-1 w-4 h-4 bg-primary-container text-on-primary-fixed text-[10px] rounded-full flex items-center justify-center font-bold">2</span>
+        </button>
+
+        <button onclick="openAccountModal()" class="h-9 px-3.5 bg-primary-container text-on-primary-fixed text-xs font-bold rounded-xl flex items-center gap-1.5 shadow-[0_0_16px_rgba(57,255,20,0.35)] hover:bg-primary-fixed active:scale-95 transition-all">
+          <span id="header-gamertag-label">ورود</span>
+        </button>
+        
+        <button onclick="openAccountModal()" class="w-8 h-8 rounded-full bg-primary flex items-center justify-center overflow-hidden flex-shrink-0" title="پروفایل">
+          <img id="header-user-avatar" src="" alt="Skin" class="w-full h-full object-cover hidden"/>
+          <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN CONTACT CONTENT -->
+  <main class="flex-grow relative w-full pt-20 pb-24 bg-surface">
+    <div class="max-w-4xl mx-auto px-4 flex flex-col w-full text-on-surface select-none pb-12">
+
+      <!-- Breadcrumbs -->
+      <div class="flex items-center gap-2 text-xs text-on-surface-variant mb-4">
+        <a href="index.html" class="hover:text-primary-container">خانه</a>
+        <span>/</span>
+        <span class="text-on-surface">پشتیبانی و سفارش تلگرام</span>
+      </div>
+
+      <!-- Hero Banner for Contact -->
+      <section class="text-center py-6 mb-8 bg-surface-container-low/80 rounded-2xl p-6 border border-outline-variant/30 backdrop-blur-md">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container/10 text-xs text-primary-container font-bold mb-3 border border-primary-container/30">
+          <span class="material-symbols-outlined text-[16px]">send</span>
+          ثبت سفارش مستقیم در تلگرام
+        </div>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-on-surface mb-2">
+          مرکز سفارشات و پشتیبانی ۲۴ ساعته
+        </h1>
+        <p class="text-xs sm:text-sm text-on-surface-variant max-w-lg mx-auto leading-relaxed">
+          سفارش خود را به صورت مستقیم در تلگرام ثبت کنید تا ظرف کمتر از ۲ دقیقه رنک روی اکانت ماینکرفت شما فعال گردد.
+        </p>
+      </section>
+
+      <!-- OFFICIAL CHANNELS QUICK CARDS -->
+      <section class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 mb-10">
+        <!-- Telegram Support -->
+        <a href="https://t.me/HeroShop_Support" target="_blank" class="bg-surface-container-low/90 p-4 rounded-2xl border border-primary-container/30 hover:border-primary-container flex items-center gap-3.5 shadow-md hover:scale-[1.02] transition-all">
+          <div class="w-12 h-12 rounded-xl bg-primary-container text-on-primary-fixed flex items-center justify-center flex-shrink-0 shadow-[0_0_12px_rgba(57,255,20,0.4)]">
+            <span class="material-symbols-outlined text-[24px]">send</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-sm font-bold text-on-surface">پشتیبانی تلگرام</span>
+            <span class="text-xs text-primary-container font-mono" dir="ltr">@HeroShop_Support</span>
+            <span class="text-[10px] text-outline mt-0.5">پاسخگویی سریع کمتر از ۵ دقیقه</span>
+          </div>
+        </a>
+
+        <!-- Telegram Channel -->
+        <a href="https://t.me/HeroShop_MC" target="_blank" class="bg-surface-container-low/90 p-4 rounded-2xl border border-outline-variant/30 hover:border-cyan-400 flex items-center gap-3.5 shadow-md hover:scale-[1.02] transition-all">
+          <div class="w-12 h-12 rounded-xl bg-surface-container-high text-cyan-400 flex items-center justify-center flex-shrink-0 border border-cyan-400/30">
+            <span class="material-symbols-outlined text-[24px]">campaign</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-sm font-bold text-on-surface">کانال اطلاع‌رسانی</span>
+            <span class="text-xs text-cyan-400 font-mono" dir="ltr">@HeroShop_MC</span>
+            <span class="text-[10px] text-outline mt-0.5">کدهای تخفیف و ایونت‌ها</span>
+          </div>
+        </a>
+
+        <!-- Discord Server -->
+        <a href="https://discord.gg/heroshop" target="_blank" class="bg-surface-container-low/90 p-4 rounded-2xl border border-outline-variant/30 hover:border-purple-400 flex items-center gap-3.5 shadow-md hover:scale-[1.02] transition-all">
+          <div class="w-12 h-12 rounded-xl bg-surface-container-high text-purple-400 flex items-center justify-center flex-shrink-0 border border-purple-400/30">
+            <span class="material-symbols-outlined text-[24px]">forum</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-sm font-bold text-on-surface">سرور دیسکورد</span>
+            <span class="text-xs text-purple-400 font-mono" dir="ltr">discord.gg/heroshop</span>
+            <span class="text-[10px] text-outline mt-0.5">چت صوتی و رول‌های VIP</span>
+          </div>
+        </a>
+      </section>
+
+      <!-- TWO COLUMN SECTION: TELEGRAM ORDER BUILDER & LIVE TICKET -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
+        
+        <!-- TELEGRAM ORDER BUILDER -->
+        <section class="bg-surface-container-low/95 p-5 rounded-2xl border border-primary-container/40 shadow-xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="material-symbols-outlined text-primary-container text-[24px]">shopping_cart_checkout</span>
+              <h2 class="text-lg font-bold text-on-surface">
+                فرم سفارش مستقیم در تلگرام
+              </h2>
+            </div>
+            <p class="text-xs text-on-surface-variant mb-4 leading-relaxed">
+              اطلاعات زیر را تکمیل کنید تا متن سفارش آماده شده و تلگرام شما باز شود:
+            </p>
+
+            <form id="telegram-order-form" onsubmit="submitTelegramOrder(event)" class="flex flex-col gap-3.5">
+              <!-- Gamertag Field -->
+              <div class="flex flex-col gap-1">
+                <label class="text-xs text-on-surface-variant font-medium">نام کاربری (گیم‌تگ ماینکرفت): <span class="text-error">*</span></label>
+                <input id="tg-gamertag" type="text" required placeholder="مثال: Steve_Hero" dir="ltr" class="h-10 px-3 rounded-xl bg-surface-container-lowest text-on-surface text-xs sm:text-sm font-mono border border-outline-variant/40 focus:border-primary-container focus:outline-none"/>
+              </div>
+
+              <!-- Product Field -->
+              <div class="flex flex-col gap-1">
+                <label class="text-xs text-on-surface-variant font-medium">رنک یا محصول انتخابی: <span class="text-error">*</span></label>
+                <select id="tg-product" class="h-10 px-3 rounded-xl bg-surface-container-lowest text-on-surface text-xs sm:text-sm border border-outline-variant/40 focus:border-primary-container focus:outline-none">
+                  <option value="👑 رنک سلطنتی LEGEND (300 کوین)">🔥 رنک سلطنتی LEGEND — ۳۰۰ کوین (۳۰۰,۰۰۰ تومان)</option>
+                  <option value="💎 رنک ویژه ELITE (170 کوین)">💎 رنک ویژه ELITE — ۱۷۰ کوین (۱۷۰,۰۰۰ تومان)</option>
+                  <option value="⚡ رنک قدرتمند MVP (100 کوین)">⚡ رنک قدرتمند MVP — ۱۰۰ کوین (۱۰۰,۰۰۰ تومان)</option>
+                  <option value="👑 رنک پایه VIP (50 کوین)">👑 رنک پایه VIP — ۵۰ کوین (۵۰,۰۰۰ تومان)</option>
+                  <option value="🗝️ پکیج ۳ عددی کلید Mythic Crate (35 کوین)">🗝️ پکیج ۳ عددی کلید Mythic Crate — ۳۵ کوین</option>
+                  <option value="🪙 بسته ۵۰۰۰ کوین سرور (50 کوین)">🪙 بسته ۵,۰۰۰ کوین سرور — ۵۰ کوین</option>
+                  <option value="💰 بسته اقتصادی ۱۵۰۰۰ کوین (130 کوین)">💰 بسته ۱۵,۰۰۰ کوین ویژه — ۱۳۰ کوین</option>
+                  <option value="✨ افکت بال نئونی Particle Wings (40 کوین)">✨ افکت بال نئونی Particle Wings — ۴۰ کوین</option>
+                </select>
+              </div>
+
+              <!-- Payment Method -->
+              <div class="flex flex-col gap-1">
+                <label class="text-xs text-on-surface-variant font-medium">روش پرداخت پیشنهادی: <span class="text-error">*</span></label>
+                <select id="tg-payment" class="h-10 px-3 rounded-xl bg-surface-container-lowest text-on-surface text-xs sm:text-sm border border-outline-variant/40 focus:border-primary-container focus:outline-none">
+                  <option value="کارت به کارت شتابی (آنی)">کارت به کارت شتابی با رسید (تحویل فوری)</option>
+                  <option value="درگاه پرداخت اینترنتی">درگاه پرداخت اینترنتی رمزنگاری‌شده</option>
+                  <option value="تتر / رمزارز (USDT)">تتر / رمزارز شبکه TRC20 یا TON</option>
+                </select>
+              </div>
+
+              <!-- Extra Note -->
+              <div class="flex flex-col gap-1">
+                <label class="text-xs text-on-surface-variant font-medium">یادداشت یا سوال خاص (اختیاری):</label>
+                <input id="tg-note" type="text" placeholder="مثلاً: هماهنگی جهت انتقال رنک یا تخفیف" class="h-10 px-3 rounded-xl bg-surface-container-lowest text-on-surface text-xs border border-outline-variant/40 focus:border-primary-container focus:outline-none"/>
+              </div>
+
+              <!-- Submit to Telegram Button -->
+              <button type="submit" class="mt-2 w-full h-11 bg-primary-container hover:bg-primary-fixed text-on-primary-fixed text-xs sm:text-sm font-extrabold rounded-xl flex items-center justify-center gap-2 shadow-[0_0_16px_rgba(57,255,20,0.4)] active:scale-95 transition-all">
+                <span class="material-symbols-outlined text-[20px]">send</span>
+                <span>انتقال به تلگرام و ارسال مشخصات سفارش</span>
+              </button>
+            </form>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-surface-container-high/60 flex items-center justify-between text-[11px] text-outline">
+            <span>آی‌پی سرور: 185.141.105.216:6784</span>
+            <span class="text-primary-container font-bold">پشتیبانی ۲۴/۷ آنلاین</span>
+          </div>
+        </section>
+
+        <!-- LIVE TICKET SUBMISSION & TRACKING -->
+        <section class="bg-surface-container-low/95 p-5 rounded-2xl border border-outline-variant/30 shadow-xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary-container text-[24px]">support_agent</span>
+                <h2 class="text-lg font-bold text-on-surface">
+                  ارسال تیکت پشتیبانی
+                </h2>
+              </div>
+              <button onclick="toggleTicketLookup()" class="text-xs text-primary-container hover:underline font-medium">
+                پیگیری تیکت قبلی
+              </button>
+            </div>
+            <p class="text-xs text-on-surface-variant mb-4 leading-relaxed">
+              در صورت بروز مشکل در فعال‌سازی یا نیاز به راهنمایی، پیام خود را ثبت کنید:
+            </p>
+
+            <!-- Tracking Lookup Form (Hidden by default) -->
+            <div id="ticket-lookup-box" class="hidden mb-4 p-3 rounded-xl bg-surface-container-high/60 border border-primary-container/30">
+              <label class="text-xs text-on-surface-variant font-medium block mb-1">کد پیگیری تیکت (مثال: HERO-12345):</label>
+              <div class="flex items-center gap-2">
+                <input id="lookup-code-input" type="text" placeholder="HERO-XXXXX" dir="ltr" class="flex-grow h-9 px-3 rounded-lg bg-surface-container-lowest text-xs font-mono text-on-surface border border-outline-variant/40 focus:outline-none"/>
+                <button onclick="checkTicketStatus()" class="h-9 px-3 bg-primary-container text-on-primary-fixed text-xs font-bold rounded-lg">استعلام</button>
+              </div>
+              <div id="lookup-result" class="mt-2 text-xs hidden"></div>
+            </div>
+
+            <form id="support-ticket-form" onsubmit="submitSupportTicket(event)" class="flex flex-col gap-3.5">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="flex flex-col gap-1">
+                  <label class="text-xs text-on-surface-variant font-medium">نام شما: <span class="text-error">*</span></label>
+                  <input id="ticket-name" type="text" required placeholder="نام یا مستعار" class="h-10 px-3 rounded-xl bg-surface-container-lowest text-on-surface text-xs border border-outline-variant/40 focus:border-primary-container focus:outline-none"/>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <label class="text-xs text-on-surface-variant font-medium">گیم‌تگ ماینکرفت: <span class="text-error">*</span></label>
+                  <input id="ticket-gamertag" type="text" required placeholder="Minecraft Username" dir="ltr" class="h-10 px-3 rounded-xl bg-surface-container-lowest text-on-surface text-xs font-mono border border-outline-variant/40 focus:border-primary-container focus:outline-none"/>
+                </div>
+              </div>
+
+              <div class="flex flex-col gap-1">
+                <label class="text-xs text-on-surface-variant font-medium">دپارتمان پشتیبانی: <span class="text-error">*</span></label>
+                <select id="ticket-dept" class="h-10 px-3 rounded-xl bg-surface-container-lowest text-on-surface text-xs border border-outline-variant/40 focus:border-primary-container focus:outline-none">
+                  <option value="فعال‌سازی رنک و تراکنش">پیگیری فعال‌سازی رنک یا عدم اعمال سفارش</option>
+                  <option value="تغییر نام کاربری و انتقال">درخواست انتقال رنک به گیم‌تگ جدید</option>
+                  <option value="گزارش باگ یا تخلف بازیکن">گزارش تخلف، گریف یا باگ سرور</option>
+                  <option value="پیشنهاد و انتقاد">پیشنهاد فیچر یا سوال عمومی</option>
+                </select>
+              </div>
+
+              <div class="flex flex-col gap-1">
+                <label class="text-xs text-on-surface-variant font-medium">شرح پیام: <span class="text-error">*</span></label>
+                <textarea id="ticket-message" rows="3" required placeholder="توضیحات کامل مشکل همراه با شماره تراکنش در صورت پرداخت..." class="p-3 rounded-xl bg-surface-container-lowest text-on-surface text-xs border border-outline-variant/40 focus:border-primary-container focus:outline-none leading-relaxed"></textarea>
+              </div>
+
+              <button type="submit" class="mt-1 w-full h-11 bg-surface-container-high hover:bg-primary-container hover:text-on-primary-fixed text-on-surface text-xs font-bold rounded-xl flex items-center justify-center gap-2 border border-outline-variant/30 active:scale-95 transition-all">
+                <span class="material-symbols-outlined text-[18px]">confirmation_number</span>
+                <span>ثبت تیکت و دریافت کد پیگیری</span>
+              </button>
+            </form>
+          </div>
+
+          <!-- Ticket Success Receipt Modal / Box -->
+          <div id="ticket-receipt" class="hidden mt-4 p-4 rounded-xl bg-surface-container-highest/80 border border-primary-container/40 flex flex-col gap-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-primary-container font-bold flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">check_circle</span>
+                تیکت شما با موفقیت ثبت شد!
+              </span>
+              <span id="ticket-code-display" class="font-mono font-bold text-xs bg-primary-container text-on-primary-fixed px-2 py-0.5 rounded">HERO-12345</span>
+            </div>
+            <p class="text-[11px] text-on-surface-variant leading-relaxed">
+              کد بالا را ذخیره نمایید. وضعیت تیکت شما توسط اپراتور در حال بررسی قرار گرفت و پاسخ ظرف حداکثر ۲ ساعت ثبت می‌شود.
+            </p>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- FAQ QUICK HELP -->
+      <section class="mb-8 bg-surface-container-low/80 p-5 rounded-2xl border border-outline-variant/20">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="material-symbols-outlined text-primary-container text-[20px]">help</span>
+          <h3 class="text-sm font-bold text-on-surface">راهنمای فوری سفارش</h3>
+        </div>
+        <ul class="flex flex-col gap-2 text-xs text-on-surface-variant leading-relaxed">
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-primary-container text-[16px] mt-0.5">done</span>
+            <span>هنگام انتقال به تلگرام، پیام به صورت خودکار فرمت‌بندی شده و نیازی به تایپ مجدد مشخصات ندارید.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-primary-container text-[16px] mt-0.5">done</span>
+            <span>شماره کارت یا درگاه رسمی تنها توسط آیدی تایید شده @HeroShop_Support ارائه می‌گردد. مراقب کلاهبرداران باشید.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-primary-container text-[16px] mt-0.5">done</span>
+            <span>در حین ثبت سفارش نیازی به خروج از سرور ماینکرفت نیست؛ سیستم دستور را آنلاین اجرا می‌کند.</span>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="mt-auto w-full bg-surface-container-lowest/90 px-4 py-8 text-center flex flex-col items-center gap-4 border-t border-surface-container-high/40">
+      <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-on-surface-variant">
+        <a class="hover:text-primary-container transition-colors" href="index.html">خانه</a>
+        <a class="hover:text-primary-container transition-colors" href="products.html">فروشگاه رنک‌ها</a>
+        <a class="hover:text-primary-container transition-colors" href="about.html">قوانین و درباره ما</a>
+        <a class="hover:text-primary-container transition-colors text-primary-container font-bold" href="contact.html">پشتیبانی تلگرام</a>
+      </div>
+      <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-surface-container text-xs text-secondary border border-outline-variant/30">
+        <span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+        <span class="text-on-surface-variant">آدرس سرور:</span>
+        <span class="text-on-surface font-mono font-bold" dir="ltr">185.141.105.216:6784</span>
+      </div>
+      <div class="flex flex-col items-center gap-1">
+        <p class="text-xs text-on-surface-variant">Hero Shop - فروشگاه رنک‌های سرور ماینکرفت</p>
+        <p class="text-[11px] text-outline" dir="rtl">© 2026 Hero Shop - تمامی حقوق محفوظ است.</p>
+      </div>
+    </footer>
+  </main>
+
+  <!-- BOTTOM MOBILE NAVIGATION BAR -->
+  <nav class="fixed bottom-0 inset-x-0 z-40 md:hidden pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-8px_24px_rgba(0,0,0,0.7)] border-t border-surface-container-high/40">
+    <div class="flex justify-around items-center h-16 px-2">
+      <a class="flex flex-col items-center justify-center gap-1 w-14 h-14 text-on-surface-variant hover:text-on-surface transition-colors" href="index.html" data-nav-page="index.html">
+        <span class="material-symbols-outlined text-[22px]">cottage</span>
+        <span class="text-[10px]">خانه</span>
+      </a>
+      <a class="flex flex-col items-center justify-center gap-1 w-14 h-14 text-on-surface-variant hover:text-on-surface transition-colors" href="products.html" data-nav-page="products.html">
+        <span class="material-symbols-outlined text-[22px]">military_tech</span>
+        <span class="text-[10px]">رنک‌ها</span>
+      </a>
+      <a class="flex flex-col items-center justify-center gap-1 w-14 h-14 text-on-surface-variant hover:text-on-surface transition-colors relative cursor-pointer" onclick="openCart()">
+        <span class="material-symbols-outlined text-[22px]">shopping_bag</span>
+        <span class="text-[10px]">سبد خرید</span>
+        <span class="cart-badge-count absolute top-1.5 right-3 w-4 h-4 rounded-full bg-primary-container text-on-primary-fixed font-bold text-[9px] flex items-center justify-center">2</span>
+      </a>
+      <a class="flex flex-col items-center justify-center gap-1 w-14 h-14 transition-colors text-primary-container font-bold" href="contact.html" data-nav-page="contact.html">
+        <span class="material-symbols-outlined text-[22px]">headset_mic</span>
+        <span class="text-[10px]">پشتیبانی</span>
+      </a>
+      <a class="flex flex-col items-center justify-center gap-1 w-14 h-14 text-on-surface-variant hover:text-on-surface transition-colors" href="about.html" data-nav-page="about.html">
+        <span class="material-symbols-outlined text-[22px]">info</span>
+        <span class="text-[10px]">درباره ما</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- CART SLIDE-OVER DRAWER -->
+  <div id="cart-drawer-backdrop" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden opacity-0 drawer-backdrop"></div>
+  <aside id="cart-drawer" class="fixed top-0 bottom-0 left-0 z-50 w-full max-w-sm bg-surface-container-low shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col border-r border-outline-variant/30">
+    <div class="h-16 px-4 bg-surface-container-lowest flex items-center justify-between border-b border-surface-container-high/60">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary-container text-[22px]">shopping_cart</span>
+        <span class="font-bold text-sm text-on-surface">سبد خرید شما</span>
+      </div>
+      <button onclick="closeCart()" class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+    </div>
+
+    <div class="flex-grow p-4 overflow-y-auto flex flex-col gap-3">
+      <div class="p-3 rounded-xl bg-surface-container-high/40 border border-outline-variant/30 mb-1">
+        <label class="block text-xs text-on-surface-variant mb-1 font-medium">گیم‌تگ ماینکرفت شما:</label>
+        <div class="flex items-center gap-2">
+          <input id="cart-gamertag-input" type="text" placeholder="مثلاً: Steve_Pro" dir="ltr" class="flex-grow h-9 px-3 rounded-lg bg-surface-container-lowest text-on-surface text-xs font-mono border border-outline-variant/40 focus:border-primary-container focus:outline-none"/>
+          <button onclick="saveAccountGamertag()" class="h-9 px-3 bg-surface-container-highest hover:bg-primary-container hover:text-on-primary-fixed text-xs font-bold rounded-lg transition-colors">ثبت</button>
+        </div>
+      </div>
+
+      <div id="cart-items-list" class="flex flex-col gap-2.5"></div>
+      <div id="cart-empty-message" class="hidden flex-col items-center justify-center py-12 text-center text-on-surface-variant gap-2">
+        <span class="material-symbols-outlined text-[48px] text-outline/50">remove_shopping_cart</span>
+        <span class="text-sm font-bold">سبد خرید شما خالی است</span>
+      </div>
+    </div>
+
+    <div id="cart-drawer-footer" class="p-4 bg-surface-container-lowest border-t border-surface-container-high/60 flex flex-col gap-3">
+      <div class="flex items-center justify-between text-xs">
+        <span class="text-on-surface-variant">مجموع قیمت:</span>
+        <span id="cart-total-price" class="text-sm font-bold text-primary-container font-mono">۰ کوین</span>
+      </div>
+      <button onclick="checkoutWithTelegram()" class="w-full h-11 bg-primary-container hover:bg-primary-fixed text-on-primary-fixed text-xs font-extrabold rounded-xl flex items-center justify-center gap-2 shadow-[0_0_16px_rgba(57,255,20,0.4)] active:scale-95 transition-all">
+        <span class="material-symbols-outlined text-[18px]">send</span>
+        <span>ثبت و تکمیل سفارش در تلگرام</span>
+      </button>
+      <button onclick="CartManager.clearCart()" class="text-center text-[11px] text-outline hover:text-error transition-colors">
+        خالی کردن سبد خرید
+      </button>
+    </div>
+  </aside>
+
+  <!-- GAMERTAG MODAL -->
+  <div id="account-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="w-full max-w-sm rounded-2xl bg-surface-container-low border border-outline-variant/30 shadow-2xl p-5 flex flex-col gap-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary-container text-[22px]">account_circle</span>
+          <span class="font-bold text-sm text-on-surface">حساب بازیکن</span>
+        </div>
+        <button onclick="closeAccountModal()" class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface">
+          <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+      </div>
+      <p class="text-xs text-on-surface-variant leading-relaxed">
+        نام کاربری ماینکرفت خود را وارد نمایید.
+      </p>
+      <div class="flex flex-col gap-1.5">
+        <label class="text-xs text-on-surface-variant font-medium">گیم‌تگ (Username):</label>
+        <input id="account-gamertag-input" type="text" placeholder="Minecraft Username" dir="ltr" class="w-full h-10 px-3 rounded-xl bg-surface-container-lowest text-on-surface text-sm font-mono border border-outline-variant/40 focus:border-primary-container focus:outline-none"/>
+      </div>
+      <button onclick="saveAccountGamertag()" class="w-full h-10 bg-primary-container hover:bg-primary-fixed text-on-primary-fixed text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 transition-all shadow-[0_0_12px_rgba(57,255,20,0.3)]">
+        <span class="material-symbols-outlined text-[18px]">save</span>
+        ذخیره نام کاربری
+      </button>
+    </div>
+  </div>
+
+  <script src="./assets/js/main.js"></script>
+  <script>
+    // Autofill stored gamertag in form
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedTag = CartManager.getGamertag();
+      if (savedTag) {
+        const tgInput = document.getElementById('tg-gamertag');
+        const ticketTag = document.getElementById('ticket-gamertag');
+        if (tgInput) tgInput.value = savedTag;
+        if (ticketTag) ticketTag.value = savedTag;
+      }
+    });
+
+    function submitTelegramOrder(e) {
+      e.preventDefault();
+      const gamertag = document.getElementById('tg-gamertag').value.trim();
+      const product = document.getElementById('tg-product').value;
+      const payment = document.getElementById('tg-payment').value;
+      const note = document.getElementById('tg-note').value.trim();
+
+      if (!gamertag) {
+        showToast('لطفاً گیم‌تگ ماینکرفت خود را وارد کنید', false);
+        return;
+      }
+
+      CartManager.setGamertag(gamertag);
+
+      const message = `سلام، قصد ثبت سفارش از سایت Hero Shop را دارم:
+🎮 گیم‌تگ ماینکرفت: ${gamertag}
+📦 محصول / رنک: ${product}
+💳 روش پرداخت: ${payment}
+${note ? `📝 یادداشت: ${note}\n` : ''}🌐 سرور: Hero Shop (${SERVER_CONFIG.ip})
+لطفاً راهنمایی جهت پرداخت و فعال‌سازی آنی را ارسال فرمایید. با تشکر!`;
+
+      const encoded = encodeURIComponent(message);
+      const url = `https://t.me/${SERVER_CONFIG.telegramUser}?text=${encoded}`;
+      window.open(url, '_blank');
+      showToast('در حال باز کردن تلگرام...', true);
+    }
+
+    function submitSupportTicket(e) {
+      e.preventDefault();
+      const name = document.getElementById('ticket-name').value.trim();
+      const gamertag = document.getElementById('ticket-gamertag').value.trim();
+      const dept = document.getElementById('ticket-dept').value;
+      const message = document.getElementById('ticket-message').value.trim();
+
+      if (!gamertag || !message) {
+        showToast('لطفاً فیلدهای ضروری را پر کنید', false);
+        return;
+      }
+
+      CartManager.setGamertag(gamertag);
+
+      const randomCode = 'HERO-' + Math.floor(10000 + Math.random() * 90000);
+      const ticketData = {
+        code: randomCode,
+        name,
+        gamertag,
+        dept,
+        message,
+        date: new Date().toLocaleDateString('fa-IR'),
+        status: 'در حال بررسی توسط ادمین'
+      };
+
+      // Store in localStorage
+      let tickets = [];
+      try {
+        tickets = JSON.parse(localStorage.getItem('heroshop_tickets') || '[]');
+      } catch (err) {}
+      tickets.push(ticketData);
+      localStorage.setItem('heroshop_tickets', JSON.stringify(tickets));
+
+      // Show receipt
+      const receipt = document.getElementById('ticket-receipt');
+      const codeDisplay = document.getElementById('ticket-code-display');
+      if (codeDisplay) codeDisplay.textContent = randomCode;
+      if (receipt) receipt.classList.remove('hidden');
+
+      showToast(`تیکت شما با کد ${randomCode} ثبت گردید!`, true);
+      document.getElementById('support-ticket-form').reset();
+    }
+
+    function toggleTicketLookup() {
+      const box = document.getElementById('ticket-lookup-box');
+      if (box) box.classList.toggle('hidden');
+    }
+
+    function checkTicketStatus() {
+      const code = document.getElementById('lookup-code-input').value.trim().toUpperCase();
+      const resultEl = document.getElementById('lookup-result');
+      if (!code || !resultEl) return;
+
+      let tickets = [];
+      try {
+        tickets = JSON.parse(localStorage.getItem('heroshop_tickets') || '[]');
+      } catch (e) {}
+
+      const found = tickets.find(t => t.code.toUpperCase() === code);
+      resultEl.classList.remove('hidden');
+
+      if (found) {
+        resultEl.innerHTML = `
+          <div class="p-2 rounded bg-surface-container-low border border-primary-container/30 text-on-surface">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-primary-container">${found.code}</span>
+              <span class="text-[10px] text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded font-bold">${found.status}</span>
+            </div>
+            <p class="text-[11px] text-on-surface-variant">گیم‌تگ: ${found.gamertag} | دپارتمان: ${found.dept}</p>
+            <p class="text-[11px] text-outline mt-0.5">تاریخ ثبت: ${found.date}</p>
+          </div>
+        `;
+      } else {
+        resultEl.innerHTML = `
+          <div class="p-2 rounded bg-error-container/20 border border-error/40 text-error">
+            تیکتی با این کد در سابقه سیستم یافت نشد. لطفاً کد را مجدد بررسی فرمایید.
+          </div>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>
