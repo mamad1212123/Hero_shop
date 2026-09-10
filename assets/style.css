@@ -1,0 +1,126 @@
+/* Hero Shop - Custom Styles & Animations */
+@layer base {
+  html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #111412;
+    color: #e1e3df;
+    font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  body {
+    overscroll-behavior: none;
+  }
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #111412;
+}
+::-webkit-scrollbar-thumb {
+  background: #272b28;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #39ff14;
+}
+
+/* Neon Glows */
+.glow-primary {
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+}
+.glow-primary-lg {
+  box-shadow: 0 0 35px rgba(57, 255, 20, 0.6);
+}
+.glow-border {
+  border: 1px solid rgba(57, 255, 20, 0.35);
+}
+.glow-border:hover {
+  border-color: rgba(57, 255, 20, 0.8);
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.35);
+}
+
+/* Rank Glow Variants */
+.rank-vip {
+  border: 1px solid rgba(250, 204, 21, 0.3);
+}
+.rank-vip:hover {
+  border-color: rgba(250, 204, 21, 0.8);
+  box-shadow: 0 0 24px rgba(250, 204, 21, 0.25);
+}
+.rank-mvp {
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+.rank-mvp:hover {
+  border-color: rgba(56, 189, 248, 0.8);
+  box-shadow: 0 0 24px rgba(56, 189, 248, 0.25);
+}
+.rank-elite {
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+.rank-elite:hover {
+  border-color: rgba(168, 85, 247, 0.8);
+  box-shadow: 0 0 24px rgba(168, 85, 247, 0.25);
+}
+.rank-legend {
+  border: 1px solid rgba(57, 255, 20, 0.5);
+  box-shadow: 0 0 30px rgba(57, 255, 20, 0.25);
+}
+.rank-legend:hover {
+  border-color: rgba(57, 255, 20, 1);
+  box-shadow: 0 0 40px rgba(57, 255, 20, 0.45);
+}
+
+/* Minecraft In-Game Chat Badge Mockup */
+.mc-badge {
+  font-family: 'Space Grotesk', monospace;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* Animations */
+@keyframes floatAnimation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+.animate-float {
+  animation: floatAnimation 4s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Modal and Drawer Transitions */
+.drawer-backdrop {
+  transition: opacity 0.3s ease;
+}
+.drawer-content {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
